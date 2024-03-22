@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
-import { cx } from "../layout";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { cx } from "@/utils/constants";
 
 const navItems = {
   "/": {

@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { Navbar } from "./components/nav";
 import Link from "next/link";
 import Image from "next/image";
+import { cx } from "@/utils/constants";
 
 const metadata: Metadata = {
   metadataBase: new URL("https://islamtouati.vercel.app/"),
@@ -33,8 +34,6 @@ const metadata: Metadata = {
   },
 };
 const inter = Inter({ subsets: ["latin"] });
-export const cx = (...classes: any[]) => classes.filter(Boolean).join(" ");
-
 export default function RootLayout({
   children,
 }: {
