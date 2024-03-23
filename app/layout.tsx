@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { cx } from "@/utils/constants";
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL("https://islamtouati.vercel.app/"),
   title: {
     default: "Islam Touati",
@@ -49,7 +49,7 @@ export default function RootLayout({
     >
       <body className="antialiased">
         <Navbar />
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 xs:px-4 md:px-0">
           <div className="max-w-4xl mx-auto">{children}</div>
         </main>
         <footer className="px-[5%] py-8 flex space-x-5 items-center justify-center">

@@ -29,12 +29,12 @@ export function Navbar() {
   return (
     <aside className="sticky top-0 inset-x-0 tracking-tight z-50">
       <nav
-        className="flex items-center relative px-10 py-8 backdrop-blur-sm bg-[#0b0b0b]/30 fade md:overflow-auto scroll-pr-6 md:relative"
+        className="flex flex-col space-y-2 xs:space-y-0 xs:flex-row items-center relative px-2 xs:px-4 md:px-10 py-4 xs:py-8 backdrop-blur-sm bg-[#0b0b0b]/30 fade md:overflow-auto scroll-pr-6 md:relative"
         id="nav"
       >
-        <Link href="/" className="flex flex-1 space-x-5 items-center ">
+        <Link href="/" className="hidden flex-1 space-x-5 items-center xs:flex">
           <Image alt="My logo" src="/logo.svg" width="32" height="32" />
-          <div>
+          <div className="hidden md:block">
             <p className="text-lg font-medium text-neutral-900 dark:text-neutral-100">
               Touati Islam
             </p>
@@ -43,6 +43,12 @@ export function Navbar() {
             </p>
           </div>
         </Link>
+        <Link href="/" className="flex space-x-5 items-center xs:hidden">
+          <Image alt="My logo" src="/logo.svg" width="24" height="24" />
+          <p className="text-base font-medium text-neutral-900 dark:text-neutral-100">
+            Touati Islam
+          </p>
+        </Link>
         <div className="flex space-x-2 p-0.5 bg-neutral-800 rounded-full">
           {Object.entries(navItems).map(([path, { name }]) => {
             return (
@@ -50,7 +56,7 @@ export function Navbar() {
                 key={path}
                 href={path}
                 className={cx(
-                  "transition-all text-lg flex align-middle relative py-2 px-5",
+                  "transition-all text-sm xs:text-lg flex align-middle relative py-2 px-4 xs:px-5",
                   path === currentPath ? "bg-black text-white rounded-full" : ""
                 )}
               >
@@ -59,15 +65,15 @@ export function Navbar() {
             );
           })}
         </div>
-        <div className="flex-1 flex space-x-4 items-center justify-end">
-          <div className="flex space-x-3 items-center text-green-400">
+        <div className="flex flex-1 space-x-4 items-center justify-end">
+          <div className="hidden space-x-3 items-center text-green-400 sm:flex">
             <span className="relative flex h-4 w-4 items-center justify-center">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
             </span>
             <span>Available</span>
           </div>
-          <div className="flex space-x-2 items-center">
+          <div className="hidden space-x-2 items-center md:flex">
             {socialMedia.map((item) => (
               <Link
                 href={item.link}
